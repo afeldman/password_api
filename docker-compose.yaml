@@ -1,0 +1,13 @@
+version: "3"
+
+services:
+  password_api:
+    build: .
+    container_name: password_api
+    networks:
+    - nginx-proxy
+    environment:
+    - VIRTUAL_PORT=3000
+    - VIRTUAL_HOST=password.localhost 
+    - LETSENCRYPT_HOST=password.localhost 
+    - LETSENCRYPT_EMAIL="anton.feldmann@gmail.com"

@@ -1,0 +1,14 @@
+# https://taskfile.dev
+
+version: '3'
+
+tasks:
+  dev:
+    desc: start the software in development mode
+    cmds:
+    - deno run --allow-net --allow-read --watch server.ts
+  default:
+    desc: start the software in production
+    cmds:
+      - deno run --allow-net --allow-read server.ts
+    silent: true
